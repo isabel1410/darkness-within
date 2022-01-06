@@ -97,7 +97,7 @@ public abstract class Enemy : MonoBehaviour
             {
                 continue;
             }
-            Vector3 movement = (playerTransform.transform.position - transform.position).normalized * movementSpeed;
+            Vector3 movement = (playerTransform.transform.position - transform.position).normalized * movementSpeed / 100;
             transform.position += movement;
         }
     }
