@@ -20,6 +20,6 @@ public class PlayerHealth : Health
             animator.Play("Take Damage");
         }
         TakeDamage(damage);
-        healthView?.UpdateView(currenthealth, maxhealth);
+        healthView?.UpdateView(currenthealth);
     }
 }
