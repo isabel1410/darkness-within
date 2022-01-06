@@ -6,7 +6,7 @@ public class CorruptionPuddle : Corruption
     [SerializeField]
     private float lifeSpan;
 
-    protected override void Start()
+    protected sealed override void Start()
     {
         base.Start();
         if (lifeSpan != -1)

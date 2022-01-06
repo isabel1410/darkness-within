@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerHealth : Health
 {
+    public HealthView healthView;
     private Animator animator;
 
-    public void Start()
+    protected sealed override void Start()
     {
+        base.Start();
         Enemy.OnDamagePlayer += OnDamagePlayer;
         Corruption.OnDamagePlayer += OnDamagePlayer;
         animator = GetComponent<Animator>();
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
         {
             animator.Play("Take Damage");
         }
-        GetComponent<Health>().TakeDamage(damage);
+        TakeDamage(damage);
+        healthView?.UpdateView(currenthealth, maxhealth);
     }
 }

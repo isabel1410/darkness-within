@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 8147090209393447250}
-  movementSpeed: 0.01
+  movementSpeed: 1
   damage: 3
   damageCooldown: 5
   movementDistance: 1.5

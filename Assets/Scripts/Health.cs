@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     public float currenthealth;
 
     // Start is called before the first frame update
-    private void Start()
+    protected virtual void Start()
     {
         currenthealth = maxhealth;
     }
