@@ -10,7 +10,7 @@ public class SoulPoint : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             OnGetSoulPoints?.Invoke();
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }
