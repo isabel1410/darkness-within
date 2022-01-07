@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
+
     [SerializeField]
     private bool leaveCorruption;
     [SerializeField]

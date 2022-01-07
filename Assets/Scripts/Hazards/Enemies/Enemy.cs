@@ -6,6 +6,9 @@ public abstract class Enemy : MonoBehaviour
     public delegate void DamagePlayerEvent(float damage);
     public static event DamagePlayerEvent OnDamagePlayer;
 
+    public delegate void ReleaseSoulPoints(uint currentAmountOfSoulPoints, Transform transform);
+    public static event ReleaseSoulPoints OnReleaseSoulPoint;
+
     [SerializeField]
     private Health health;
     [SerializeField]
@@ -18,6 +21,14 @@ public abstract class Enemy : MonoBehaviour
     private float movementDistance;
     [SerializeField]
     private float attackRange;
+    [SerializeField]
+    private uint soulPointReward;
+    [SerializeField]
+    private uint minSoulPointReward;
+    [SerializeField]
+    private uint maxSoulPointReward;
+
+
 
     private Animator animator;
     private Transform playerTransform;
@@ -29,6 +40,7 @@ public abstract class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        soulPointReward = (uint)Random.Range(minSoulPointReward, maxSoulPointReward);
     }
 
     public virtual void TakeDamage(float damage)
@@ -77,6 +89,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+
     private void Die()
     {
         StopMovement();
@@ -85,6 +98,7 @@ public abstract class Enemy : MonoBehaviour
         {
             animator.Play("Die");
         }
+
         Debug.Log("Slime died", gameObject);
     }
 
@@ -125,6 +139,11 @@ public abstract class Enemy : MonoBehaviour
         {
             OnDamagePlayer.Invoke(damage);
         }
+    }
+
+    public void SoulPointReleases()
+    {
+        OnReleaseSoulPoint?.Invoke(soulPointReward, transform);
     }
 
     private bool InAttackRange()
