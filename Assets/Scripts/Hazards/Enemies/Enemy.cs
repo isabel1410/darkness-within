@@ -51,6 +51,10 @@ public abstract class Enemy : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            GetComponent<Animator>().Play("Take Damage");
+        }
     }
 
     public void StartAttack()
@@ -93,7 +97,7 @@ public abstract class Enemy : MonoBehaviour
     private void Die()
     {
         StopMovement();
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
         if (animator != null)
         {
             animator.Play("Die");
@@ -149,5 +153,10 @@ public abstract class Enemy : MonoBehaviour
     private bool InAttackRange()
     {
         return Vector3.Distance(transform.position, playerTransform.transform.position) <= attackRange;
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
