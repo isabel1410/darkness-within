@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class SoulPointView : MonoBehaviour
 {
     [SerializeField]
-    Text soulPointText;
+    private Text soulPointText;
 
     public void UpdateView(uint currentAmountOfSoulPoints)
     {

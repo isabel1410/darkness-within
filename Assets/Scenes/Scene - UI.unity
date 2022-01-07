@@ -281,7 +281,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538873268}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: StopAttack
         m_Mode: 1
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538873268}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: StartAttack
         m_Mode: 1
@@ -945,6 +945,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1599390113}
     m_Modifications:
+    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: soulPointPrefab
+      value: 
+      objectReference: {fileID: 2305400150747479068, guid: 98dbfdec74de8b847adc727a2eadf6e4, type: 3}
+    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: maxSoulPointReward
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: minSoulPointReward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1013,20 +1033,9 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
 --- !u!4 &538873267 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
   m_PrefabInstance: {fileID: 538873266}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &538873268 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-  m_PrefabInstance: {fileID: 538873266}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf868da5bf748f46a8aff3f3d5bedf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &669531070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538873268}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Slime, Assembly-CSharp
         m_MethodName: StartMovement
         m_Mode: 1
@@ -1472,7 +1481,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538873268}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 4
@@ -1660,8 +1669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc12efbd77f8535498f4d7489cc38b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulPointPrefab: {fileID: 2305400150747479068, guid: 98dbfdec74de8b847adc727a2eadf6e4, type: 3}
-  reward: 0
 --- !u!1 &1240241440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1752,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538873268}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: StopMovement
         m_Mode: 1
@@ -1831,6 +1838,112 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1327541066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1599390113}
+    m_Modifications:
+    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: soulPointPrefab
+      value: 
+      objectReference: {fileID: 2305400150747479068, guid: 98dbfdec74de8b847adc727a2eadf6e4, type: 3}
+    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: maxSoulPointReward
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: minSoulPointReward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534332, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_Name
+      value: Slime (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: maxSoulPointReward
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: minSoulPointReward
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147090209393447252, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+      propertyPath: m_Name
+      value: Slime
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+--- !u!4 &1327541067 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+  m_PrefabInstance: {fileID: 1327541066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546595083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,6 +2082,7 @@ Transform:
   - {fileID: 2048110776}
   - {fileID: 538873267}
   - {fileID: 1225432338}
+  - {fileID: 1327541067}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2333,6 +2447,9 @@ GameObject:
   - component: {fileID: 2048110780}
   - component: {fileID: 2048110781}
   - component: {fileID: 2048110782}
+  - component: {fileID: 2048110783}
+  - component: {fileID: 2048110785}
+  - component: {fileID: 2048110784}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2477,6 +2594,129 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulPointView: {fileID: 1125674925}
   currentAmountOfSoulPoints: 0
+--- !u!114 &2048110783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048110775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34cf217a9e243b4aa44862872f0f685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3
+--- !u!114 &2048110784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048110775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e3c69bd8d8d5b41946f6bdfc6842de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2048110785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048110775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 3120bb668971e794f9475980cddafbd6, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2048110784}
+        m_TargetAssemblyTypeName: PlayerInputProcessor, Assembly-CSharp
+        m_MethodName: MoveChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 641c6193-aeb7-4e0f-85f5-30fcac6ea6ab
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 873b31ef-1cc0-4691-8883-74172202b228
+    m_ActionName: Player/Attack Melee[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f3b065ad-51eb-41af-a414-2718b839db0b
+    m_ActionName: Player/Attack Ranged[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b01e0ebd-ee96-432e-ba1d-5f4b42f59c1e
+    m_ActionName: Player/Attack Special[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5e2ead53-ff23-4a93-86cc-eb1d3e259e63
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d71fcf99-63d3-4f22-96aa-ee20b5512b26
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ba2851e-4b15-4e02-81bd-942fa102ae2f
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44166073-adac-4fce-8f4d-0f7fe8275a26
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a17095e-f8bd-449e-9509-68655f615176
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b9ca72f-1473-4e75-a366-3c3179f9bdd3
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8ed2be0-2b90-4a5d-a3e8-fcfe3dc9ec30
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1021f406-59fb-474c-bc32-d50c3b59ac45
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c32b801-86bf-4c92-831d-9fa8ac4a3ab7
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5f6ed33-d4ca-4b2f-9a52-833d09981d1b
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2081558112
 GameObject:
   m_ObjectHideFlags: 0

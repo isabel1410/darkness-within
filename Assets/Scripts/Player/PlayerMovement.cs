@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movement;
 
+    public void AdjustMovementSpeedPercentage(int percentage)
+    {
+        movementSpeed *= percentage / 100 + 1;
+    }
+
     // Start is called before the first frame update
     private void Start()
     {

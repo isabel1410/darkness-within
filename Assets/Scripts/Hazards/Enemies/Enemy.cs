@@ -21,14 +21,13 @@ public abstract class Enemy : MonoBehaviour
     private float movementDistance;
     [SerializeField]
     private float attackRange;
-    [SerializeField]
     private uint soulPointReward;
     [SerializeField]
     private uint minSoulPointReward;
     [SerializeField]
     private uint maxSoulPointReward;
-
-
+    [SerializeField]
+    private GameObject soulPointPrefab;
 
     private Animator animator;
     private Transform playerTransform;
@@ -40,7 +39,7 @@ public abstract class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        soulPointReward = (uint)Random.Range(minSoulPointReward, maxSoulPointReward);
+        soulPointReward = (uint)Random.Range(minSoulPointReward, maxSoulPointReward + 1);
     }
 
     public virtual void TakeDamage(float damage)
@@ -93,7 +92,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-
+    [ContextMenu("Die")]
     private void Die()
     {
         StopMovement();
@@ -145,11 +144,6 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void SoulPointReleases()
-    {
-        OnReleaseSoulPoint?.Invoke(soulPointReward, transform);
-    }
-
     private bool InAttackRange()
     {
         return Vector3.Distance(transform.position, playerTransform.transform.position) <= attackRange;
@@ -157,6 +151,12 @@ public abstract class Enemy : MonoBehaviour
 
     public void Destroy()
     {
+        Debug.Log(soulPointReward);
+        for (int i = 0; i < soulPointReward; i++)
+        {
+            GameObject soulPoint = Instantiate(soulPointPrefab);
+            soulPoint.transform.position = transform.position;
+        }
         Destroy(gameObject);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSoulPoints : MonoBehaviour
@@ -11,16 +9,14 @@ public class PlayerSoulPoints : MonoBehaviour
     private uint currentAmountOfSoulPoints;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         SoulPoint.OnGetSoulPoints += OnGetSoulPoints;
-        currentAmountOfSoulPoints = 0;
         soulPointView.UpdateView(currentAmountOfSoulPoints);
     }
 
-    private void OnGetSoulPoints(uint reward)
+    private void OnGetSoulPoints()
     {
-        currentAmountOfSoulPoints += reward;
-        soulPointView.UpdateView(currentAmountOfSoulPoints);
+        soulPointView.UpdateView(++currentAmountOfSoulPoints);
     }
 }
