@@ -18,6 +18,16 @@ public class CorruptionPuddle : Corruption
     private IEnumerator DestroyAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
+        Disappear();
+    }
+
+    public void Disappear()
+    {
+        GetComponent<Animator>().Play("Disappear");
+    }
+
+    public void Destroy()
+    {
         Destroy(gameObject);
     }
 }

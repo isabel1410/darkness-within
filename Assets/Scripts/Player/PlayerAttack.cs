@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public Canvas parentCanvas;
+
     [SerializeField]
     private float damageMelee;
     [SerializeField]
@@ -17,7 +20,17 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private float cooldownSpecial;
     [SerializeField]
+    private float rangeMeleeFront;
+    [SerializeField]
+    private float rangeMeleeSide;
+    [SerializeField]
+    private float rangeRanged;
+    [SerializeField]
+    private float rangeSpecial;
+    [SerializeField]
     private GameObject fireballPrefab;
+    [SerializeField]
+    private new Camera camera;
 
     private Animator animator;
     private bool readyForAttack;
@@ -34,19 +47,31 @@ public class PlayerAttack : MonoBehaviour
 
     private void AttackMelee()
     {
-        StartCooldown(cooldownMelee);
+        if (!readyForAttack)
+        {
+            return;
+        }
+        StartCoroutine(StartCooldown(cooldownMelee));
         animator.Play("Attack Melee");
     }
 
     private void AttackRanged()
     {
-        StartCooldown(cooldownRanged);
+        if (!readyForAttack)
+        {
+            return;
+        }
+        StartCoroutine(StartCooldown(cooldownRanged));
         animator.Play("Attack Ranged");
     }
 
     private void AttackSpecial()
     {
-        StartCooldown(cooldownSpecial);
+        if (!readyForAttack)
+        {
+            return;
+        }
+        StartCoroutine(StartCooldown(cooldownSpecial));
         animator.Play("Attack Special");
     }
 
@@ -57,39 +82,57 @@ public class PlayerAttack : MonoBehaviour
         readyForAttack = true;
     }
 
-    private Vector3 GetFireballDirection()
+    private Vector3 GetDirection()
     {
-        Vector3 direction = transform.position - Input.mousePosition;
+        Vector3 direction = camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         direction.z = 0;
-        return direction;
+        return direction - transform.position;
     }
 
     public void DamageMelee()//Small box
     {
-        //Check which enemies are in range
-        List<Enemy> enemies = new List<Enemy>();
-
-        foreach (Enemy enemy in enemies)
+        Vector3 direction = GetDirection();
+        RaycastHit[] raycastHits = Physics.BoxCastAll(transform.position, new Vector3(rangeMeleeSide / 2, rangeMeleeSide / 2, .5f), direction, transform.rotation, rangeMeleeFront);
+        foreach (RaycastHit raycastHit in raycastHits)
         {
-            enemy.TakeDamage(damageMelee);
+            if (raycastHit.collider.gameObject.GetComponent<Enemy>())
+            {
+                raycastHit.collider.gameObject.GetComponent<Enemy>().TakeDamage(damageMelee);
+            }
         }
     }
 
     public void SummonFireBall()
     {
         GameObject fireballObject = Instantiate(fireballPrefab);
+        Fireball fireball = fireballObject.GetComponent<Fireball>();
         fireballObject.transform.position = transform.position;
-        //fireballObject.GetComponent<Fireball>().direction = direction;
+        fireball.direction = GetDirection();
+        fireball.damage = damageRanged;
+        fireball.maxDistance = rangeRanged;
     }
 
     public void SummonFireBallRing()
     {
-        Vector3 direction = new Vector3(0, 1, 0);
+        Vector3[] directions =
+        {
+            new Vector3(0, 1, 0),//Up
+            new Vector3(.5f, .5f, 0),
+            new Vector3(1, 0, 0),//Right
+            new Vector3(.5f, -.5f, 0),
+            new Vector3(0, -1, 0),//Down
+            new Vector3(-.5f, -.5f, 0),
+            new Vector3(-1, 0, 0),//Left
+            new Vector3(-.5f, .5f, 0)
+        };
         for (sbyte counter = 0; counter < 8; counter++)
         {
-            GameObject fireballobject = Instantiate(fireballPrefab);
-            fireballobject.transform.position = transform.position;
-            //fireballobject.GetComponent<Fireball>().direction = direction;
+            GameObject fireballObject = Instantiate(fireballPrefab);
+            Fireball fireball = fireballObject.GetComponent<Fireball>();
+            fireballObject.transform.position = transform.position;
+            fireball.direction = directions[counter];
+            fireball.damage = damageSpecial;
+            fireball.maxDistance = rangeSpecial;
         }
     }
 }
