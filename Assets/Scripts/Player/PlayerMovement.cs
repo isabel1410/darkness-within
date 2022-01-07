@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed;
 
     private Vector2 movement;
-    private int counter;
 
     // Start is called before the first frame update
     private void Start()
@@ -19,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMoveChanged(Vector2 movement)
     {
-        print(counter++);
         if (this.movement == Vector2.zero && movement != Vector2.zero)
         {
             this.movement = movement;

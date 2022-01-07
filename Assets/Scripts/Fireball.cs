@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public Direction direction;
+    public Vector3 direction;
+    public float damage;
+    public float maxDistance;
 
     [SerializeField]
-    private float maxDistance;
+    private float speed = 1;
 
     private Vector3 origin;
 
@@ -21,21 +23,27 @@ public class Fireball : MonoBehaviour
     {
         while (Vector3.Distance(origin, transform.position) < maxDistance)
         {
-            //move
-            
+            transform.position += direction.normalized * speed / 10;
             yield return new WaitForSeconds(Time.deltaTime);
+        }
+        Evaporate();
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.GetComponent<Enemy>())
+        {
+            collision.GetComponent<Enemy>().TakeDamage(damage);
         }
     }
 
-    public enum Direction
+    private void Evaporate()
     {
-        Up,
-        UpRight,
-        Right,
-        DownRight,
-        Down,
-        DownLeft,
-        Left,
-        UpLeft
+        GetComponent<Animator>().Play("Evaporate");
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

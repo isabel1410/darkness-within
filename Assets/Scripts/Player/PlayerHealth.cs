@@ -15,10 +15,7 @@ public class PlayerHealth : Health
 
     public void OnDamagePlayer(float damage)
     {
-        if (animator != null)
-        {
-            animator.Play("Take Damage");
-        }
+        animator.Play("Take Damage");
         TakeDamage(damage);
         healthView?.UpdateView(currenthealth);
     }
