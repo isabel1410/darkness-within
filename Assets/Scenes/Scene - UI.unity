@@ -281,7 +281,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1213797429}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: StopAttack
         m_Mode: 1
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1213797429}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: StartAttack
         m_Mode: 1
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1213797429}
         m_TargetAssemblyTypeName: Slime, Assembly-CSharp
         m_MethodName: StartMovement
         m_Mode: 1
@@ -1481,10 +1481,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 4
+      - m_Target: {fileID: 2145031068}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: DamageMelee
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1626,6 +1626,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161205553}
   m_CullTransparentMesh: 1
+--- !u!114 &1213797429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
+  m_PrefabInstance: {fileID: 538873266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf868da5bf748f46a8aff3f3d5bedf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1240241440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1720,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1213797429}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: StopMovement
         m_Mode: 1
@@ -1795,112 +1806,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1327541066
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1599390113}
-    m_Modifications:
-    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: soulPointPrefab
-      value: 
-      objectReference: {fileID: 294735469071838299, guid: 4c61eb0834a2cc24b81e480d27c97516, type: 3}
-    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: maxSoulPointReward
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891181367691534304, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: minSoulPointReward
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891181367691534332, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_Name
-      value: Slime (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447248, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: test
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: damage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: maxSoulPointReward
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447251, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: minSoulPointReward
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147090209393447252, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-      propertyPath: m_Name
-      value: Slime
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
---- !u!4 &1327541067 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2891181367691534335, guid: ebab2682d940a054dbadfc2e1eb21ee1, type: 3}
-  m_PrefabInstance: {fileID: 1327541066}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546595083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +1943,6 @@ Transform:
   m_Children:
   - {fileID: 2048110776}
   - {fileID: 538873267}
-  - {fileID: 1327541067}
   - {fileID: 2145031057}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2792,6 +2696,7 @@ GameObject:
   - component: {fileID: 2145031060}
   - component: {fileID: 2145031059}
   - component: {fileID: 2145031058}
+  - component: {fileID: 2145031068}
   m_Layer: 0
   m_Name: Sho
   m_TagString: Player
@@ -2808,10 +2713,10 @@ Transform:
   m_GameObject: {fileID: 2145031056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1599390113}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2145031058
 MonoBehaviour:
@@ -3078,6 +2983,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2145031068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145031056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3bbda3544b27a4e8140ae321fe1bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentCanvas: {fileID: 1546595087}
+  damageMelee: 1
+  damageRanged: 0
+  damageSpecial: 0
+  cooldownMelee: 0
+  cooldownRanged: 0
+  cooldownSpecial: 0
+  rangeMeleeFront: 55
+  rangeMeleeSide: 55
+  rangeRanged: 0
+  rangeSpecial: 0
+  fireballPrefab: {fileID: 0}
+  camera: {fileID: 1711537265}
 --- !u!1001 &6599677076599867584
 PrefabInstance:
   m_ObjectHideFlags: 0
